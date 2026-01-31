@@ -109,14 +109,16 @@ export function Step1Baseline({ data, onChange }: Step1Props) {
         </Card>
       </div>
 
-      <Card className="bg-accent/50 border-accent">
-        <CardContent className="pt-6">
-          <p className="text-center text-foreground">
-            Nice work getting <span className="font-bold">{data.monthlyUps.toLocaleString()}</span> customers through your doors. 
-            That's real marketing dollars at work.
-          </p>
-        </CardContent>
-      </Card>
+      {data.monthlyUps >= 50 && (
+        <Card className="bg-accent/50 border-accent">
+          <CardContent className="pt-6">
+            <p className="text-center text-foreground">
+              Nice work getting <span className="font-bold">{data.monthlyUps.toLocaleString()}</span> customers through your doors. 
+              That's real marketing dollars at work.
+            </p>
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }
