@@ -32,7 +32,7 @@ export const defaultWizardData: WizardData = {
   monthlyUps: 1000,
   closeRate: 25,
   buyElsewherePercent: 50,
-  followUpPercent: 20,
+  followUpPercent: 9,
   connectPercent: 25,
   aiReachPercent: 55,
   appointmentPercent: 25,
