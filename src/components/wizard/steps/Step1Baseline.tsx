@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { InfoTooltip } from "../InfoTooltip";
 import { WizardData, calculateMetrics } from "@/types/wizard";
-import { Users, UserCheck, UserX } from "lucide-react";
+import { Users, UserCheck, UserX, DollarSign } from "lucide-react";
 
 interface Step1Props {
   data: WizardData;
@@ -61,6 +61,23 @@ export function Step1Baseline({ data, onChange }: Step1Props) {
             {data.closeRate > 25 && (
               <p className="text-sm text-primary font-medium">That's a strong close rate! You're ahead of most dealers.</p>
             )}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="grossProfit" className="flex items-center">
+              Average Gross Profit per Deal (Front + Back)
+              <InfoTooltip content="Combined front-end and F&I gross profit per unit sold" />
+            </Label>
+            <div className="relative">
+              <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                id="grossProfit"
+                type="number"
+                value={data.grossProfit}
+                onChange={(e) => onChange({ grossProfit: parseInt(e.target.value) || 0 })}
+                className="pl-8 text-lg"
+              />
+            </div>
           </div>
         </CardContent>
       </Card>
