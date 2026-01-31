@@ -132,7 +132,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
         <CardContent className="pt-6">
           <div className="flex flex-col items-center space-y-2">
             <div className="w-full max-w-md">
-              <div className="bg-muted rounded-lg p-4 text-center">
+              <div className="bg-muted rounded-lg p-4 text-center transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-muted/80 hover:shadow-lg">
                 <div className="flex items-center justify-center gap-2 text-muted-foreground mb-1">
                   <Phone className="h-4 w-4" />
                   <span className="text-sm">Unsold Customers</span>
@@ -144,7 +144,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
                 <ArrowDown className="h-6 w-6 text-muted-foreground" />
               </div>
 
-              <div className="bg-primary/10 rounded-lg p-4 text-center mx-4">
+              <div className="bg-primary/10 rounded-lg p-4 text-center mx-4 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/20 hover:shadow-lg">
                 <div className="flex items-center justify-center gap-2 text-primary mb-1">
                   <Bot className="h-4 w-4" />
                   <span className="text-sm">AI Reached ({data.aiReachPercent}%)</span>
@@ -156,7 +156,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
                 <ArrowDown className="h-6 w-6 text-muted-foreground" />
               </div>
 
-              <div className="bg-primary/20 rounded-lg p-4 text-center mx-8">
+              <div className="bg-primary/20 rounded-lg p-4 text-center mx-8 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/30 hover:shadow-lg">
                 <div className="flex items-center justify-center gap-2 text-primary mb-1">
                   <Calendar className="h-4 w-4" />
                   <span className="text-sm">Appointments ({data.appointmentPercent}%)</span>
@@ -168,7 +168,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
                 <ArrowDown className="h-6 w-6 text-muted-foreground" />
               </div>
 
-              <div className="bg-primary/30 rounded-lg p-4 text-center mx-12">
+              <div className="bg-primary/30 rounded-lg p-4 text-center mx-12 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/40 hover:shadow-lg">
                 <div className="flex items-center justify-center gap-2 text-primary mb-1">
                   <UserCheck className="h-4 w-4" />
                   <span className="text-sm">Showed Up ({data.showRate}%)</span>
@@ -180,7 +180,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
                 <ArrowDown className="h-6 w-6 text-primary" />
               </div>
 
-              <div className="bg-primary rounded-lg p-4 text-center mx-16">
+              <div className="bg-primary rounded-lg p-4 text-center mx-16 transition-all duration-200 cursor-pointer hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/30">
                 <div className="flex items-center justify-center gap-2 text-primary-foreground mb-1">
                   <Trophy className="h-4 w-4" />
                   <span className="text-sm">Additional Sales ({data.returnCloseRate}%)</span>
