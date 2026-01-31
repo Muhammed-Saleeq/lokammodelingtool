@@ -83,13 +83,11 @@ export function Step2UnsoldDestination({ data, onChange }: Step2Props) {
         </CardContent>
       </Card>
 
-      <Card className="border-dashed">
-        <CardContent className="pt-6">
-          <p className="text-sm text-muted-foreground italic text-center">
-            "If they weren't buyers, why did they spend 2 hours at your dealership?"
-          </p>
-        </CardContent>
-      </Card>
+      <div className="text-center py-4">
+        <p className="text-xl md:text-2xl font-medium text-foreground italic">
+          "If they weren't buyers, why did they spend 2 hours at your dealership?"
+        </p>
+      </div>
     </div>
   );
 }
