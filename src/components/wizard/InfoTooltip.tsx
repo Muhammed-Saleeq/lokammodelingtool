@@ -1,9 +1,9 @@
 import { HelpCircle } from "lucide-react";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 interface InfoTooltipProps {
   content: string;
@@ -11,13 +11,15 @@ interface InfoTooltipProps {
 
 export function InfoTooltip({ content }: InfoTooltipProps) {
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <HelpCircle className="h-4 w-4 text-muted-foreground hover:text-foreground cursor-help inline-block ml-1" />
-      </TooltipTrigger>
-      <TooltipContent className="max-w-[280px]">
+    <Popover>
+      <PopoverTrigger asChild>
+        <button type="button" className="inline-flex items-center">
+          <HelpCircle className="h-4 w-4 text-muted-foreground hover:text-foreground cursor-help ml-1" />
+        </button>
+      </PopoverTrigger>
+      <PopoverContent className="max-w-[280px] text-sm">
         <p>{content}</p>
-      </TooltipContent>
-    </Tooltip>
+      </PopoverContent>
+    </Popover>
   );
 }
