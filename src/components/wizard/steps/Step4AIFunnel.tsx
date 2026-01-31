@@ -234,6 +234,12 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
           </p>
         </CardContent>
       </Card>
+
+      <div className="text-center pt-4 pb-2">
+        <p className="text-primary font-semibold text-lg">
+          👉 Continue to the next step to see your ROI and monthly impact
+        </p>
+      </div>
     </div>
   );
 }
