@@ -29,7 +29,7 @@ export interface WizardData {
 }
 
 export const defaultWizardData: WizardData = {
-  monthlyUps: 500,
+  monthlyUps: 0,
   closeRate: 27,
   buyElsewherePercent: 50,
   followUpPercent: 9,
@@ -38,8 +38,8 @@ export const defaultWizardData: WizardData = {
   appointmentPercent: 55,
   showRate: 55,
   returnCloseRate: 27,
-  grossProfit: 3500,
-  toolCost: 2000,
+  grossProfit: 0,
+  toolCost: 0,
   dealerName: '',
   contactName: '',
   email: '',
