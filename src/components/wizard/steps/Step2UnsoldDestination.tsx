@@ -37,7 +37,7 @@ export function Step2UnsoldDestination({ data, onChange }: Step2Props) {
                 onValueChange={([value]) => onChange({ buyElsewherePercent: value })}
                 min={0}
                 max={100}
-                step={5}
+                step={1}
                 className="flex-1"
               />
               <span className="text-2xl font-bold text-primary w-16 text-right">{data.buyElsewherePercent}%</span>

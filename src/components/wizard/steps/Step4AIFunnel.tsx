@@ -40,7 +40,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
                 onValueChange={([value]) => onChange({ aiReachPercent: value })}
                 min={0}
                 max={100}
-                step={5}
+                step={1}
                 className="flex-1"
               />
               <span className="text-2xl font-bold text-primary w-16 text-right">{data.aiReachPercent}%</span>
@@ -62,7 +62,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
                 onValueChange={([value]) => onChange({ appointmentPercent: value })}
                 min={0}
                 max={100}
-                step={5}
+                step={1}
                 className="flex-1"
               />
               <span className="text-2xl font-bold text-primary w-16 text-right">{data.appointmentPercent}%</span>
@@ -84,7 +84,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
                 onValueChange={([value]) => onChange({ showRate: value })}
                 min={0}
                 max={100}
-                step={5}
+                step={1}
                 className="flex-1"
               />
               <span className="text-2xl font-bold text-primary w-16 text-right">{data.showRate}%</span>
@@ -106,7 +106,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
                 onValueChange={([value]) => onChange({ returnCloseRate: value })}
                 min={0}
                 max={100}
-                step={5}
+                step={1}
                 className="flex-1"
               />
               <span className="text-2xl font-bold text-primary w-16 text-right">{data.returnCloseRate}%</span>
