@@ -115,7 +115,7 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
             {buyersNotCalled.toLocaleString()} customers you're not calling will buy from a competitor
           </p>
           
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-card/50 border border-border rounded-lg p-4">
               <div className="flex items-start gap-3">
                 <Clock className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
@@ -147,6 +147,42 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
                   <p className="font-semibold text-foreground">"New UPs are the priority"</p>
                   <p className="text-sm text-muted-foreground">
                     So you invest to bring customers in, then abandon them the second they walk out? That's wasted marketing.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card/50 border border-border rounded-lg p-4">
+              <div className="flex items-start gap-3">
+                <Phone className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-foreground">"They said they'd be back"</p>
+                  <p className="text-sm text-muted-foreground">
+                    And you believed them? Hope isn't a strategy. Your competitor is already on the phone with them.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card/50 border border-border rounded-lg p-4">
+              <div className="flex items-start gap-3">
+                <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-foreground">"We already tried once"</p>
+                  <p className="text-sm text-muted-foreground">
+                    One voicemail and done? The average sale takes 5-12 touchpoints. One attempt isn't follow-up—it's a checkbox.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card/50 border border-border rounded-lg p-4">
+              <div className="flex items-start gap-3">
+                <DollarSign className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-foreground">"It was all about price"</p>
+                  <p className="text-sm text-muted-foreground">
+                    Really? Or was it about trust, experience, or a payment they couldn't make work? You won't know unless you ask.
                   </p>
                 </div>
               </div>
