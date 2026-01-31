@@ -13,7 +13,9 @@ interface Step3Props {
 export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
   const metrics = calculateMetrics(data);
   const missedCalls = metrics.unsoldCustomers - metrics.currentFollowUpCalls;
-  const costOfInaction = Math.round(metrics.estimatedLostGross * (1 - data.followUpPercent / 100));
+  // Customers not called who will buy elsewhere - this is real lost opportunity
+  const buyersNotCalled = Math.round(missedCalls * (data.buyElsewherePercent / 100));
+  const missedOpportunityGross = buyersNotCalled * data.grossProfit;
 
   return (
     <div className="space-y-6">
@@ -48,7 +50,7 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
             </div>
             <div className="flex justify-between text-xs text-muted-foreground">
               <span>0% - Unacceptable</span>
-              <span>80-90%+ - Industry standard</span>
+              <span>80-90%+ - Where you should be</span>
             </div>
           </div>
           
@@ -95,10 +97,10 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
         </CardHeader>
         <CardContent>
           <p className="text-center text-5xl font-bold text-destructive mb-2">
-            ${costOfInaction.toLocaleString()}<span className="text-lg font-normal">/mo</span>
+            ${missedOpportunityGross.toLocaleString()}<span className="text-lg font-normal">/mo</span>
           </p>
           <p className="text-center text-muted-foreground mb-6">
-            This is what you're leaving on the table by not following up
+            {buyersNotCalled.toLocaleString()} customers you're not calling will buy from a competitor
           </p>
           
           <div className="space-y-4">
