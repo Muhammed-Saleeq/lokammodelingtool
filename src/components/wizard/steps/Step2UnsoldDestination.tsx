@@ -28,8 +28,8 @@ export function Step2UnsoldDestination({ data, onChange }: Step2Props) {
         <CardContent className="space-y-6">
           <div className="space-y-3">
             <Label className="flex items-center flex-wrap">
-              What % of your unsold customers will buy a vehicle somewhere in the next 60 days?
-              <InfoTooltip content="According to Cox Automotive research, most shoppers complete their purchase within 60 days. The only question is where." />
+              What % of your unsold customers will buy a vehicle somewhere in the next 90 days?
+              <InfoTooltip content="Research shows the majority of in-market shoppers complete their purchase within 60-90 days. The only question is where." />
             </Label>
             <div className="flex items-center gap-4">
               <Slider
