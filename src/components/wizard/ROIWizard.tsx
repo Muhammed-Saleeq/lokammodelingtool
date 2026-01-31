@@ -9,7 +9,7 @@ import { Step5Financials } from "./steps/Step5Financials";
 import { Step6Results } from "./steps/Step6Results";
 import { LokamLogo } from "@/components/LokamLogo";
 import { WizardData, defaultWizardData, calculateMetrics } from "@/types/wizard";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Home } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const STEP_TITLES = [
@@ -248,11 +248,19 @@ export function ROIWizard() {
           <a href="https://lokam.ai" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
             <LokamLogo className="h-16 w-auto" variant="light" />
           </a>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="https://lokam.ai" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground/80 transition-colors">
-              Home
+          <nav className="flex items-center gap-4 md:gap-6 text-sm">
+            <button 
+              onClick={handleRestart}
+              className="flex items-center gap-1 hover:text-primary-foreground/80 transition-colors"
+              title="Start Over"
+            >
+              <Home className="h-5 w-5" />
+              <span className="hidden md:inline">Start Over</span>
+            </button>
+            <a href="https://lokam.ai" target="_blank" rel="noopener noreferrer" className="hidden md:block hover:text-primary-foreground/80 transition-colors">
+              Website
             </a>
-            <a href="mailto:founder@lokam.ai" className="hover:text-primary-foreground/80 transition-colors">
+            <a href="mailto:founder@lokam.ai" className="hidden md:block hover:text-primary-foreground/80 transition-colors">
               Contact
             </a>
             <a href="tel:+19135132729" className="hover:text-primary-foreground/80 transition-colors">
