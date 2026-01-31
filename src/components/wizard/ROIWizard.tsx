@@ -246,7 +246,7 @@ export function ROIWizard() {
       <header className="bg-primary text-primary-foreground py-4 px-4 shadow-lg">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <a href="https://lokam.ai" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-            <LokamLogo className="h-8 w-auto" variant="light" />
+            <LokamLogo className="h-12 w-auto" variant="light" />
           </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="https://lokam.ai" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground/80 transition-colors">
