@@ -93,9 +93,9 @@ export function Step5Financials({ data, onChange }: Step5Props) {
               <p className="text-2xl font-bold text-foreground">${data.toolCost.toLocaleString()}</p>
             </div>
             <div>
-              <p className="text-sm text-muted-foreground mb-1">Net Monthly Profit</p>
-              <p className={`text-3xl font-bold ${metrics.netMonthlyProfit >= 0 ? 'text-primary' : 'text-destructive'}`}>
-                ${metrics.netMonthlyProfit.toLocaleString()}
+              <p className="text-sm text-muted-foreground mb-1">Monthly Opportunity</p>
+              <p className="text-3xl font-bold text-primary">
+                ${metrics.additionalGrossProfit.toLocaleString()}
               </p>
             </div>
             <div>
