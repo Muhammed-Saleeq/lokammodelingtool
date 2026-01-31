@@ -45,7 +45,6 @@ export function Step1Baseline({ data, onChange }: Step1Props) {
           <div className="space-y-3">
             <Label className="flex items-center">
               Current Close Rate: <span className="ml-2 font-bold text-primary">{data.closeRate}%</span>
-              <InfoTooltip content="Industry average is 20-25%. Top performers hit 30%+" />
             </Label>
             <Slider
               value={[data.closeRate]}
