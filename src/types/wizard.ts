@@ -35,7 +35,7 @@ export const defaultWizardData: WizardData = {
   followUpPercent: 9,
   connectPercent: 25,
   aiReachPercent: 55,
-  appointmentPercent: 25,
+  appointmentPercent: 55,
   showRate: 75,
   returnCloseRate: 25,
   grossProfit: 3500,
