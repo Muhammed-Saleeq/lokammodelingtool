@@ -41,7 +41,7 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
                 onValueChange={([value]) => onChange({ followUpPercent: value })}
                 min={0}
                 max={100}
-                step={5}
+                step={1}
                 className="flex-1"
               />
               <span className="text-3xl font-bold text-destructive w-20 text-right">{data.followUpPercent}%</span>
