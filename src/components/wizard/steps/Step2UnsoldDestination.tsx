@@ -64,8 +64,9 @@ export function Step2UnsoldDestination({ data, onChange }: Step2Props) {
           <CardContent className="pt-6 text-center">
             <DollarSign className="h-8 w-8 mx-auto mb-2 text-destructive" />
             <p className="text-sm text-muted-foreground">Estimated Lost Gross</p>
-            <p className="text-4xl font-bold text-destructive">${metrics.estimatedLostGross.toLocaleString()}</p>
+            <p className="text-4xl font-bold text-destructive">${metrics.estimatedLostGross.toLocaleString()}<span className="text-lg font-normal">/mo</span></p>
             <p className="text-xs text-muted-foreground mt-1">walking out the door</p>
+            <p className="text-lg font-semibold text-destructive mt-2">${(metrics.estimatedLostGross * 12).toLocaleString()}<span className="text-sm font-normal text-muted-foreground">/year</span></p>
           </CardContent>
         </Card>
       </div>
