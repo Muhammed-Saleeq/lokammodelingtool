@@ -18,12 +18,21 @@ export function WizardProgress({ currentStep, totalSteps, stepTitles }: WizardPr
               index < stepTitles.length - 1 && "relative"
             )}
           >
+            {/* Connecting line - rendered first so it's behind the circle */}
+            {index < stepTitles.length - 1 && (
+              <div
+                className={cn(
+                  "absolute top-5 left-[60%] w-[80%] h-0.5 -translate-y-1/2 z-0",
+                  index + 1 < currentStep ? "bg-primary" : "bg-muted"
+                )}
+              />
+            )}
             <div
               className={cn(
-                "w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300",
+                "relative z-10 w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300",
                 index + 1 < currentStep && "bg-primary text-primary-foreground",
                 index + 1 === currentStep && "bg-primary text-primary-foreground ring-4 ring-primary/30",
-                index + 1 > currentStep && "bg-muted text-muted-foreground"
+                index + 1 > currentStep && "bg-muted text-muted-foreground border border-border"
               )}
             >
               {index + 1}
@@ -36,14 +45,6 @@ export function WizardProgress({ currentStep, totalSteps, stepTitles }: WizardPr
             >
               {title}
             </span>
-            {index < stepTitles.length - 1 && (
-              <div
-                className={cn(
-                  "absolute top-5 left-[60%] w-[80%] h-0.5 -translate-y-1/2",
-                  index + 1 < currentStep ? "bg-primary" : "bg-muted"
-                )}
-              />
-            )}
           </div>
         ))}
       </div>
