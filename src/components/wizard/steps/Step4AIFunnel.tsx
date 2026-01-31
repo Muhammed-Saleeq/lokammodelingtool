@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { InfoTooltip } from "../InfoTooltip";
 import { WizardData, calculateMetrics } from "@/types/wizard";
-import { Bot, Phone, Calendar, UserCheck, Trophy, ArrowDown } from "lucide-react";
+import { Bot, Phone, Calendar, UserCheck, Trophy } from "lucide-react";
 
 interface Step4Props {
   data: WizardData;
@@ -21,172 +21,130 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
       </div>
 
       <Card>
-        <CardHeader>
+        <CardHeader className="pb-2">
           <CardTitle className="text-lg flex items-center gap-2">
             <Bot className="h-5 w-5 text-primary" />
             AI Agent Recovery Model
           </CardTitle>
           <CardDescription>Adjust these numbers based on what you think is realistic</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-8">
-          <div className="space-y-3">
-            <Label className="flex items-center flex-wrap">
-              % of unsold customers reached by AI
-              <InfoTooltip content="Our service dialer achieves a 70-75% reach rate by calling at optimal times, leaving voicemails, and sending texts. No lunch breaks, no days off." />
-            </Label>
-            <div className="flex items-center gap-4">
-              <Slider
-                value={[data.aiReachPercent]}
-                onValueChange={([value]) => onChange({ aiReachPercent: value })}
-                min={0}
-                max={100}
-                step={1}
-                className="flex-1"
-              />
-              <span className="text-2xl font-bold text-primary w-16 text-right">{data.aiReachPercent}%</span>
+        <CardContent className="pt-4">
+          {/* Funnel-style layout */}
+          <div className="flex flex-col items-center">
+            {/* Top of funnel - Unsold Customers */}
+            <div className="w-full bg-muted/50 rounded-t-xl p-4 border-x border-t border-border">
+              <div className="text-center mb-2">
+                <span className="text-sm text-muted-foreground">Starting Pool</span>
+                <p className="text-2xl font-bold text-foreground">{metrics.unsoldCustomers.toLocaleString()} Unsold Customers</p>
+              </div>
             </div>
-            <div className="flex justify-between text-xs text-muted-foreground">
-              <span>0%</span>
-              <span>100%</span>
-            </div>
-          </div>
 
-          <div className="space-y-3">
-            <Label className="flex items-center flex-wrap">
-              % of reached who book an appointment
-              <InfoTooltip content="These are be-backs—customers who already visited. Apply your normal schedule rate here, which should be 50-55% of contacted customers." />
-            </Label>
-            <div className="flex items-center gap-4">
-              <Slider
-                value={[data.appointmentPercent]}
-                onValueChange={([value]) => onChange({ appointmentPercent: value })}
-                min={0}
-                max={100}
-                step={1}
-                className="flex-1"
-              />
-              <span className="text-2xl font-bold text-primary w-16 text-right">{data.appointmentPercent}%</span>
-            </div>
-            <div className="flex justify-between text-xs text-muted-foreground">
-              <span>0%</span>
-              <span>100%</span>
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <Label className="flex items-center flex-wrap">
-              Appointment show rate
-              <InfoTooltip content="Use your current show rate here—but it should be no less than 50-55%. They agreed to come back, so they're motivated." />
-            </Label>
-            <div className="flex items-center gap-4">
-              <Slider
-                value={[data.showRate]}
-                onValueChange={([value]) => onChange({ showRate: value })}
-                min={0}
-                max={100}
-                step={1}
-                className="flex-1"
-              />
-              <span className="text-2xl font-bold text-primary w-16 text-right">{data.showRate}%</span>
-            </div>
-            <div className="flex justify-between text-xs text-muted-foreground">
-              <span>0%</span>
-              <span>100%</span>
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <Label className="flex items-center flex-wrap">
-              Close rate on returners
-              <InfoTooltip content="Is it logical to assume this will be lower, the same, or higher? It certainly won't be lower—so apply the same or higher. In most cases it will be well above your normal close rate. These people are coming back to buy, not visit." />
-            </Label>
-            <div className="flex items-center gap-4">
-              <Slider
-                value={[data.returnCloseRate]}
-                onValueChange={([value]) => onChange({ returnCloseRate: value })}
-                min={0}
-                max={100}
-                step={1}
-                className="flex-1"
-              />
-              <span className="text-2xl font-bold text-primary w-16 text-right">{data.returnCloseRate}%</span>
-            </div>
-            <div className="flex justify-between text-xs text-muted-foreground">
-              <span>0%</span>
-              <span>100%</span>
-            </div>
-            {data.returnCloseRate >= data.closeRate && (
-              <p className="text-sm text-primary font-medium">
-                Smart thinking—they came back for a reason.
-              </p>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Visual Funnel */}
-      <Card className="overflow-hidden">
-        <CardHeader className="bg-primary/5">
-          <CardTitle className="text-lg text-center">Your Recovery Funnel</CardTitle>
-        </CardHeader>
-        <CardContent className="pt-6">
-          <div className="flex flex-col items-center space-y-2">
-            <div className="w-full max-w-md">
-              <div className="bg-muted rounded-lg p-4 text-center transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-accent hover:brightness-125 hover:shadow-lg hover:shadow-muted/50">
-                <div className="flex items-center justify-center gap-2 text-muted-foreground mb-1">
-                  <Phone className="h-4 w-4" />
-                  <span className="text-sm">Unsold Customers</span>
+            {/* Funnel Stage 1 - AI Reach */}
+            <div className="w-[95%] bg-primary/5 p-4 border-x border-border">
+              <div className="flex items-center gap-4 mb-2">
+                <div className="flex-1">
+                  <Label className="text-sm flex items-center gap-1">
+                    <Phone className="h-3 w-3" />
+                    AI Reach Rate
+                    <InfoTooltip content="Our service dialer achieves a 70-75% reach rate by calling at optimal times, leaving voicemails, and sending texts." />
+                  </Label>
+                  <Slider
+                    value={[data.aiReachPercent]}
+                    onValueChange={([value]) => onChange({ aiReachPercent: value })}
+                    min={0}
+                    max={100}
+                    step={1}
+                    className="mt-2"
+                  />
                 </div>
-                <p className="text-3xl font-bold text-foreground">{metrics.unsoldCustomers.toLocaleString()}</p>
-              </div>
-              
-              <div className="flex justify-center my-2">
-                <ArrowDown className="h-6 w-6 text-muted-foreground" />
-              </div>
-
-              <div className="bg-primary/10 rounded-lg p-4 text-center mx-4 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/30 hover:brightness-125 hover:shadow-lg hover:shadow-primary/30">
-                <div className="flex items-center justify-center gap-2 text-primary mb-1">
-                  <Bot className="h-4 w-4" />
-                  <span className="text-sm">AI Reached ({data.aiReachPercent}%)</span>
+                <div className="text-right min-w-[80px]">
+                  <span className="text-xl font-bold text-primary">{data.aiReachPercent}%</span>
+                  <p className="text-lg font-semibold text-foreground">{metrics.aiReached.toLocaleString()}</p>
                 </div>
-                <p className="text-3xl font-bold text-primary">{metrics.aiReached.toLocaleString()}</p>
               </div>
+            </div>
 
-              <div className="flex justify-center my-2">
-                <ArrowDown className="h-6 w-6 text-muted-foreground" />
-              </div>
-
-              <div className="bg-primary/20 rounded-lg p-4 text-center mx-8 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/40 hover:brightness-125 hover:shadow-lg hover:shadow-primary/40">
-                <div className="flex items-center justify-center gap-2 text-primary mb-1">
-                  <Calendar className="h-4 w-4" />
-                  <span className="text-sm">Appointments ({data.appointmentPercent}%)</span>
+            {/* Funnel Stage 2 - Appointments */}
+            <div className="w-[85%] bg-primary/10 p-4 border-x border-border">
+              <div className="flex items-center gap-4 mb-2">
+                <div className="flex-1">
+                  <Label className="text-sm flex items-center gap-1">
+                    <Calendar className="h-3 w-3" />
+                    Appointment Rate
+                    <InfoTooltip content="These are be-backs—customers who already visited. Apply your normal schedule rate here, which should be 50-55%." />
+                  </Label>
+                  <Slider
+                    value={[data.appointmentPercent]}
+                    onValueChange={([value]) => onChange({ appointmentPercent: value })}
+                    min={0}
+                    max={100}
+                    step={1}
+                    className="mt-2"
+                  />
                 </div>
-                <p className="text-3xl font-bold text-primary">{metrics.appointmentsBooked.toLocaleString()}</p>
-              </div>
-
-              <div className="flex justify-center my-2">
-                <ArrowDown className="h-6 w-6 text-muted-foreground" />
-              </div>
-
-              <div className="bg-primary/30 rounded-lg p-4 text-center mx-12 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/50 hover:brightness-125 hover:shadow-lg hover:shadow-primary/50">
-                <div className="flex items-center justify-center gap-2 text-primary mb-1">
-                  <UserCheck className="h-4 w-4" />
-                  <span className="text-sm">Showed Up ({data.showRate}%)</span>
+                <div className="text-right min-w-[80px]">
+                  <span className="text-xl font-bold text-primary">{data.appointmentPercent}%</span>
+                  <p className="text-lg font-semibold text-foreground">{metrics.appointmentsBooked.toLocaleString()}</p>
                 </div>
-                <p className="text-3xl font-bold text-primary">{metrics.appointmentsShowed.toLocaleString()}</p>
               </div>
+            </div>
 
-              <div className="flex justify-center my-2">
-                <ArrowDown className="h-6 w-6 text-primary" />
-              </div>
-
-              <div className="bg-primary rounded-lg p-4 text-center mx-16 transition-all duration-200 cursor-pointer hover:scale-[1.03] hover:brightness-125 hover:shadow-xl hover:shadow-primary/50">
-                <div className="flex items-center justify-center gap-2 text-primary-foreground mb-1">
-                  <Trophy className="h-4 w-4" />
-                  <span className="text-sm">Additional Sales ({data.returnCloseRate}%)</span>
+            {/* Funnel Stage 3 - Show Rate */}
+            <div className="w-[75%] bg-primary/20 p-4 border-x border-border">
+              <div className="flex items-center gap-4 mb-2">
+                <div className="flex-1">
+                  <Label className="text-sm flex items-center gap-1">
+                    <UserCheck className="h-3 w-3" />
+                    Show Rate
+                    <InfoTooltip content="Use your current show rate—but it should be no less than 50-55%. They agreed to come back, so they're motivated." />
+                  </Label>
+                  <Slider
+                    value={[data.showRate]}
+                    onValueChange={([value]) => onChange({ showRate: value })}
+                    min={0}
+                    max={100}
+                    step={1}
+                    className="mt-2"
+                  />
                 </div>
-                <p className="text-4xl font-bold text-primary-foreground">{metrics.additionalSales.toLocaleString()}</p>
+                <div className="text-right min-w-[80px]">
+                  <span className="text-xl font-bold text-primary">{data.showRate}%</span>
+                  <p className="text-lg font-semibold text-foreground">{metrics.appointmentsShowed.toLocaleString()}</p>
+                </div>
               </div>
+            </div>
+
+            {/* Funnel Stage 4 - Close Rate */}
+            <div className="w-[65%] bg-primary/30 p-4 border-x border-border">
+              <div className="flex items-center gap-4 mb-2">
+                <div className="flex-1">
+                  <Label className="text-sm flex items-center gap-1">
+                    <Trophy className="h-3 w-3" />
+                    Close Rate
+                    <InfoTooltip content="These people came back to buy, not visit. Apply the same or higher close rate." />
+                  </Label>
+                  <Slider
+                    value={[data.returnCloseRate]}
+                    onValueChange={([value]) => onChange({ returnCloseRate: value })}
+                    min={0}
+                    max={100}
+                    step={1}
+                    className="mt-2"
+                  />
+                </div>
+                <div className="text-right min-w-[80px]">
+                  <span className="text-xl font-bold text-primary">{data.returnCloseRate}%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom of funnel - Result */}
+            <div className="w-[55%] bg-primary rounded-b-xl p-4 text-center">
+              <span className="text-sm text-primary-foreground/80">Additional Sales</span>
+              <p className="text-3xl font-bold text-primary-foreground">{metrics.additionalSales}</p>
+              {data.returnCloseRate >= data.closeRate && (
+                <p className="text-xs text-primary-foreground/80 mt-1">Smart thinking—they came back for a reason.</p>
+              )}
             </div>
           </div>
         </CardContent>
