@@ -100,8 +100,8 @@ export function ROIWizard() {
           
           <div class="hero">
             <p>Your Monthly Opportunity</p>
-            <div class="big-number">$${metrics.netMonthlyProfit.toLocaleString()}</div>
-            <p>net profit per month | ${metrics.roi.toFixed(1)}x ROI | $${metrics.annualImpact.toLocaleString()}/year</p>
+            <div class="big-number">$${metrics.additionalGrossProfit.toLocaleString()}</div>
+            <p>additional gross profit per month | ${metrics.roi.toFixed(1)}x ROI | $${metrics.annualImpact.toLocaleString()}/year</p>
           </div>
 
           <h2>📊 Your Inputs</h2>

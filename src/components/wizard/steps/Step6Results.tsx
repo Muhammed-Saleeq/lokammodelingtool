@@ -42,8 +42,8 @@ export function Step6Results({ data, onChange, onRestart, onExportPDF }: Step6Pr
             <Trophy className="h-12 w-12 mx-auto opacity-80" />
             <div>
               <p className="text-sm opacity-80">Your Monthly Opportunity</p>
-              <p className="text-5xl font-bold">${metrics.netMonthlyProfit.toLocaleString()}</p>
-              <p className="text-sm opacity-80 mt-1">net profit after tool cost</p>
+              <p className="text-5xl font-bold">${metrics.additionalGrossProfit.toLocaleString()}</p>
+              <p className="text-sm opacity-80 mt-1">additional gross profit per month</p>
             </div>
             <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-primary-foreground/20">
               <div>
