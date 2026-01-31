@@ -170,7 +170,7 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
                 <div>
                   <p className="font-semibold text-foreground">"We already tried once"</p>
                   <p className="text-sm text-muted-foreground">
-                    One voicemail and done? The average sale takes 5-12 touchpoints. One attempt isn't follow-up—it's a checkbox.
+                    One voicemail and done? It may take 3-6 more touchpoints to move the customer forward. One attempt isn't follow-up—it's a checkbox.
                   </p>
                 </div>
               </div>
