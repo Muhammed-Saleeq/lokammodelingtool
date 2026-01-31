@@ -58,10 +58,13 @@ export function ROIWizard() {
     const printContent = `
       <html>
         <head>
-          <title>Desklog Recovery ROI Report</title>
+          <title>lokam.ai - Desklog Recovery ROI Report</title>
           <style>
             body { font-family: Arial, sans-serif; padding: 40px; max-width: 800px; margin: 0 auto; }
-            h1 { color: #1a1a2e; border-bottom: 3px solid #4f46e5; padding-bottom: 10px; }
+            .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 3px solid #4f46e5; }
+            .logo { font-size: 28px; font-weight: bold; color: #4f46e5; }
+            .contact-info { text-align: right; font-size: 12px; color: #666; }
+            h1 { color: #1a1a2e; margin-top: 0; }
             h2 { color: #4f46e5; margin-top: 30px; }
             .hero { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; padding: 30px; border-radius: 12px; text-align: center; margin: 20px 0; }
             .hero .big-number { font-size: 48px; font-weight: bold; margin: 10px 0; }
@@ -76,11 +79,23 @@ export function ROIWizard() {
             .comparison > div { padding: 20px; border-radius: 8px; text-align: center; }
             .do-nothing { background: #f5f5f5; color: #666; }
             .with-ai { background: #4f46e5; color: white; }
-            .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666; }
+            .footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid #4f46e5; text-align: center; }
+            .footer .logo { margin-bottom: 10px; }
+            .footer .tagline { color: #666; font-size: 14px; }
           </style>
         </head>
         <body>
-          <h1>🚗 Desklog Recovery ROI Report</h1>
+          <div class="header">
+            <div>
+              <div class="logo">lokam.ai</div>
+              <h1>🚗 Desklog Recovery ROI Report</h1>
+            </div>
+            <div class="contact-info">
+              <p>hello@lokam.ai</p>
+              <p>(800) 555-1234</p>
+              <p>www.lokam.ai</p>
+            </div>
+          </div>
           
           <div class="hero">
             <p>Your Monthly Opportunity</p>
@@ -176,8 +191,10 @@ export function ROIWizard() {
           ` : ''}
 
           <div class="footer">
-            <p><strong>These are YOUR numbers. Your close rate. Your gross. Your opportunity.</strong></p>
-            <p>Generated on ${new Date().toLocaleDateString()}</p>
+            <div class="logo">lokam.ai</div>
+            <p class="tagline">AI-powered solutions for automotive dealerships</p>
+            <p style="margin-top: 15px;"><strong>These are YOUR numbers. Your close rate. Your gross. Your opportunity.</strong></p>
+            <p style="color: #999; font-size: 12px; margin-top: 10px;">Generated on ${new Date().toLocaleDateString()} | hello@lokam.ai | (800) 555-1234</p>
           </div>
         </body>
       </html>
@@ -223,21 +240,43 @@ export function ROIWizard() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <header className="bg-primary text-primary-foreground py-6 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-2xl md:text-3xl font-bold text-center">
-            Desklog Recovery ROI Calculator
-          </h1>
-          <p className="text-center text-primary-foreground/80 mt-2">
-            Discover the hidden revenue in your unsold traffic
-          </p>
+      <header className="bg-primary text-primary-foreground py-4 px-4 shadow-lg">
+        <div className="max-w-4xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="bg-primary-foreground text-primary font-bold text-xl px-3 py-1 rounded-lg">
+              lokam.ai
+            </div>
+          </div>
+          <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a href="https://lokam.ai" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground/80 transition-colors">
+              Home
+            </a>
+            <a href="mailto:hello@lokam.ai" className="hover:text-primary-foreground/80 transition-colors">
+              Contact
+            </a>
+            <a href="tel:+18005551234" className="hover:text-primary-foreground/80 transition-colors">
+              (800) 555-1234
+            </a>
+          </nav>
         </div>
       </header>
 
+      {/* Hero Section */}
+      <div className="bg-primary text-primary-foreground pb-8 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-2xl md:text-3xl font-bold">
+            Desklog Recovery ROI Calculator
+          </h1>
+          <p className="text-primary-foreground/80 mt-2">
+            Discover the hidden revenue in your unsold traffic
+          </p>
+        </div>
+      </div>
+
       {/* Progress */}
-      <div className="max-w-4xl mx-auto px-4 py-6">
+      <div className="max-w-4xl mx-auto px-4 py-6 w-full">
         <WizardProgress 
           currentStep={currentStep} 
           totalSteps={totalSteps} 
@@ -246,7 +285,7 @@ export function ROIWizard() {
       </div>
 
       {/* Content */}
-      <main className="max-w-4xl mx-auto px-4 pb-8">
+      <main className="max-w-4xl mx-auto px-4 pb-8 flex-1 w-full">
         {renderStep()}
 
         {/* Navigation */}
@@ -268,6 +307,45 @@ export function ROIWizard() {
           </div>
         )}
       </main>
+
+      {/* Footer */}
+      <footer className="bg-muted border-t py-8 px-4 mt-auto">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <div className="font-bold text-xl mb-3 text-primary">lokam.ai</div>
+              <p className="text-sm text-muted-foreground">
+                AI-powered solutions for automotive dealerships. Recover lost sales and maximize your ROI.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3">Contact</h4>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <p>📧 hello@lokam.ai</p>
+                <p>📞 (800) 555-1234</p>
+                <p>🌐 www.lokam.ai</p>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3">Quick Links</h4>
+              <div className="space-y-2 text-sm">
+                <a href="https://lokam.ai" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">
+                  About Us
+                </a>
+                <a href="https://lokam.ai/demo" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">
+                  Request Demo
+                </a>
+                <a href="https://lokam.ai/contact" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">
+                  Get in Touch
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="border-t mt-8 pt-6 text-center text-sm text-muted-foreground">
+            <p>© {new Date().getFullYear()} lokam.ai. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
