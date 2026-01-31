@@ -1,26 +1,45 @@
 
-
-# Update Step 2 Timeframe and Soften Tooltip
+# Add Hover Effects to "Beyond the Numbers" Containers
 
 ## Summary
-Update the buying timeframe from 90 days to 60 days and soften the tooltip language with a Cox Automotive reference.
+Add interactive hover effects to all insight containers in the "Beyond the Numbers" section for better visual feedback when users scroll over them.
+
+## Current Issue
+- The user sees 52% for appointment booking rate, but the default is already 55% - this was manually changed
+- The "Beyond the Numbers" containers lack hover/highlight effects
 
 ## Changes
 
-**File: `src/components/wizard/steps/Step2UnsoldDestination.tsx`**
+### File: `src/components/wizard/steps/Step4AIFunnel.tsx`
 
-### Line 31 - Slider Label
-**Current:** "What % of your unsold customers will buy a vehicle somewhere in the next 90 days?"
+Update each container div (lines 206-220) from:
+```
+bg-card/50 border border-border rounded-lg p-3
+```
 
-**Updated:** "What % of your unsold customers will buy a vehicle somewhere in the next 60 days?"
+To:
+```
+bg-card/50 border border-border rounded-lg p-3 
+transition-all duration-200 cursor-pointer
+hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg
+```
 
-### Line 32 - Tooltip
-**Current:** "Studies show 85% of dealership visitors buy within 90 days. The only question is where."
+### Hover Effects Applied:
+- Subtle scale up (1.02x) on hover
+- Background shifts to primary color tint
+- Border highlights with primary color
+- Shadow appears for depth
+- Smooth 200ms transition animation
+- Cursor changes to pointer for interactivity feel
 
-**Updated:** "According to Cox Automotive research, most shoppers complete their purchase within 60 days. The only question is where."
+### Containers Affected (5 total):
+1. "Undervaluing trade-ins"
+2. "Unreasonable finance rates"  
+3. "Hard-sell managers pushing customers away"
+4. "Salespeople who don't know the product"
+5. "A team that's unengaged" (spans 2 columns)
 
-## Why This Works
-- 60-day window is more defensible and creates urgency
-- Cox Automotive attribution adds credibility without overstating specific percentages
-- "Most shoppers" is softer than claiming a specific 85% figure
+All containers will receive identical hover treatment for consistency.
 
+## Note on Default Value
+The appointment percent default is already 55% in `src/types/wizard.ts` (line 38). If you're seeing 52%, that means it was manually adjusted during your session. The default is correct.
