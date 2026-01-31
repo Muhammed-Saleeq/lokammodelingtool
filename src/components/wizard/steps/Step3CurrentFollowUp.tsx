@@ -55,7 +55,7 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
           </div>
           
           {data.followUpPercent < 80 && (
-            <div className="bg-destructive/20 border border-destructive/30 rounded-lg p-4 text-center">
+            <div className="bg-secondary border border-destructive rounded-lg p-4 text-center">
               <p className="text-destructive font-semibold text-lg">
                 {data.followUpPercent < 30 ? "🚨 Critical Gap" : data.followUpPercent < 50 ? "⚠️ Significant Gap" : "📉 Below Standard"}
               </p>
