@@ -7,6 +7,7 @@ import { Step3CurrentFollowUp } from "./steps/Step3CurrentFollowUp";
 import { Step4AIFunnel } from "./steps/Step4AIFunnel";
 import { Step5Financials } from "./steps/Step5Financials";
 import { Step6Results } from "./steps/Step6Results";
+import { LokamLogo } from "@/components/LokamLogo";
 import { WizardData, defaultWizardData, calculateMetrics } from "@/types/wizard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -244,20 +245,18 @@ export function ROIWizard() {
       {/* Header */}
       <header className="bg-primary text-primary-foreground py-4 px-4 shadow-lg">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="bg-primary-foreground text-primary font-bold text-xl px-3 py-1 rounded-lg">
-              lokam.ai
-            </div>
-          </div>
+          <a href="https://lokam.ai" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+            <LokamLogo className="h-8 w-auto" variant="light" />
+          </a>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="https://lokam.ai" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground/80 transition-colors">
               Home
             </a>
-            <a href="mailto:hello@lokam.ai" className="hover:text-primary-foreground/80 transition-colors">
+            <a href="mailto:founder@lokam.ai" className="hover:text-primary-foreground/80 transition-colors">
               Contact
             </a>
-            <a href="tel:+18005551234" className="hover:text-primary-foreground/80 transition-colors">
-              (800) 555-1234
+            <a href="tel:+19135132729" className="hover:text-primary-foreground/80 transition-colors">
+              (913) 513-2729
             </a>
           </nav>
         </div>
@@ -313,17 +312,23 @@ export function ROIWizard() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <div className="font-bold text-xl mb-3 text-primary">lokam.ai</div>
+              <LokamLogo className="h-8 w-auto mb-3" variant="dark" />
               <p className="text-sm text-muted-foreground">
-                AI-powered solutions for automotive dealerships. Recover lost sales and maximize your ROI.
+                AI-powered voice solutions for automotive dealerships. Boost your NPS/CSI and recover lost sales.
               </p>
             </div>
             <div>
               <h4 className="font-semibold mb-3">Contact</h4>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p>📧 hello@lokam.ai</p>
-                <p>📞 (800) 555-1234</p>
-                <p>🌐 www.lokam.ai</p>
+                <a href="mailto:founder@lokam.ai" className="block hover:text-foreground transition-colors">
+                  📧 founder@lokam.ai
+                </a>
+                <a href="tel:+19135132729" className="block hover:text-foreground transition-colors">
+                  📞 +1 (913) 513-2729
+                </a>
+                <a href="https://lokam.ai" target="_blank" rel="noopener noreferrer" className="block hover:text-foreground transition-colors">
+                  🌐 www.lokam.ai
+                </a>
               </div>
             </div>
             <div>
@@ -332,10 +337,10 @@ export function ROIWizard() {
                 <a href="https://lokam.ai" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">
                   About Us
                 </a>
-                <a href="https://lokam.ai/demo" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">
-                  Request Demo
+                <a href="https://calendly.com/saleeq-lokam/30-minutes-meeting-1" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">
+                  Book a Demo
                 </a>
-                <a href="https://lokam.ai/contact" target="_blank" rel="noopener noreferrer" className="block text-muted-foreground hover:text-foreground transition-colors">
+                <a href="mailto:founder@lokam.ai" className="block text-muted-foreground hover:text-foreground transition-colors">
                   Get in Touch
                 </a>
               </div>

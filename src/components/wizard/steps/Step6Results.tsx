@@ -224,9 +224,9 @@ export function Step6Results({ data, onChange, onRestart, onExportPDF }: Step6Pr
           className="h-auto py-4 flex flex-col items-center gap-2"
           asChild
         >
-          <a href="tel:+15551234567">
+          <a href="https://calendly.com/saleeq-lokam/30-minutes-meeting-1" target="_blank" rel="noopener noreferrer">
             <Phone className="h-6 w-6" />
-            <span>Schedule a Conversation</span>
+            <span>Book a Demo</span>
           </a>
         </Button>
       </div>
