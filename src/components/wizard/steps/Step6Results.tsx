@@ -55,7 +55,7 @@ export function Step6Results({ data, onChange, onRestart, onExportPDF }: Step6Pr
                 <p className="text-xs opacity-80">ROI</p>
               </div>
               <div>
-                <p className="text-2xl font-bold">${(metrics.annualImpact / 1000).toFixed(0)}K</p>
+                <p className="text-2xl font-bold">${metrics.annualImpact.toLocaleString()}</p>
                 <p className="text-xs opacity-80">Annual</p>
               </div>
             </div>
