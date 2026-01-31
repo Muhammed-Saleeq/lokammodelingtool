@@ -109,7 +109,7 @@ export function Step1Baseline({ data, onChange }: Step1Props) {
         </Card>
       </div>
 
-      {data.monthlyUps >= 50 && (
+      {data.monthlyUps >= 400 ? (
         <Card className="bg-accent/50 border-accent">
           <CardContent className="pt-6">
             <p className="text-center text-foreground">
@@ -118,7 +118,16 @@ export function Step1Baseline({ data, onChange }: Step1Props) {
             </p>
           </CardContent>
         </Card>
-      )}
+      ) : data.monthlyUps >= 1 ? (
+        <Card className="bg-accent/50 border-accent">
+          <CardContent className="pt-6">
+            <p className="text-center text-foreground">
+              <span className="font-bold">{data.monthlyUps.toLocaleString()}</span> monthly visits means <span className="font-bold">{data.monthlyUps.toLocaleString()}</span> opportunities. 
+              In this business, every UP is a chance to earn a customer for life.
+            </p>
+          </CardContent>
+        </Card>
+      ) : null}
     </div>
   );
 }
