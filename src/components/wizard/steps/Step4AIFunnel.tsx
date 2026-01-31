@@ -202,21 +202,104 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
             These issues are costing you money every month—but no one is telling your team because there's no evidence. <span className="text-foreground font-semibold">That ends now.</span>
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div className="bg-card/50 border border-border rounded-lg p-3 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
-              <p className="text-sm text-foreground">💰 Undervaluing trade-ins</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Trade-in Issues */}
+            <div className="bg-card border border-border rounded-xl p-4 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">💰</span>
+                <div>
+                  <h4 className="font-semibold text-foreground">Undervaluing Trade-Ins</h4>
+                  <p className="text-sm text-muted-foreground mt-1">Discover when appraisals are pushing customers to competitors</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-card/50 border border-border rounded-lg p-3 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
-              <p className="text-sm text-foreground">📊 Unreasonable finance rates</p>
+
+            {/* Finance Issues */}
+            <div className="bg-card border border-border rounded-xl p-4 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">📊</span>
+                <div>
+                  <h4 className="font-semibold text-foreground">Unreasonable Finance Rates</h4>
+                  <p className="text-sm text-muted-foreground mt-1">Find out when F&I is losing deals over rate objections</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-card/50 border border-border rounded-lg p-3 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
-              <p className="text-sm text-foreground">😤 Hard-sell managers pushing customers away</p>
+
+            {/* Hard-Sell Managers */}
+            <div className="bg-card border border-border rounded-xl p-4 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">😤</span>
+                <div>
+                  <h4 className="font-semibold text-foreground">Hard-Sell Managers</h4>
+                  <p className="text-sm text-muted-foreground mt-1">Learn when aggressive tactics are pushing customers away</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-card/50 border border-border rounded-lg p-3 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
-              <p className="text-sm text-foreground">❓ Salespeople who don't know the product</p>
+
+            {/* Product Knowledge */}
+            <div className="bg-card border border-border rounded-xl p-4 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">❓</span>
+                <div>
+                  <h4 className="font-semibold text-foreground">Product Knowledge Gaps</h4>
+                  <p className="text-sm text-muted-foreground mt-1">Identify salespeople who can't answer customer questions</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-card/50 border border-border rounded-lg p-3 md:col-span-2 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
-              <p className="text-sm text-foreground">😴 A team that's unengaged—order takers, not a sales department</p>
+
+            {/* Price Objections */}
+            <div className="bg-card border border-border rounded-xl p-4 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">🏷️</span>
+                <div>
+                  <h4 className="font-semibold text-foreground">Price Negotiation Patterns</h4>
+                  <p className="text-sm text-muted-foreground mt-1">Understand where price objections are really coming from</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Timing Issues */}
+            <div className="bg-card border border-border rounded-xl p-4 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">⏰</span>
+                <div>
+                  <h4 className="font-semibold text-foreground">Timing & Availability</h4>
+                  <p className="text-sm text-muted-foreground mt-1">Spot when customers couldn't get help or waited too long</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Inventory Issues */}
+            <div className="bg-card border border-border rounded-xl p-4 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">🚗</span>
+                <div>
+                  <h4 className="font-semibold text-foreground">Inventory & Selection</h4>
+                  <p className="text-sm text-muted-foreground mt-1">Know when you're losing deals due to stock issues</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Department Communication */}
+            <div className="bg-card border border-border rounded-xl p-4 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">🔗</span>
+                <div>
+                  <h4 className="font-semibold text-foreground">Department Breakdowns</h4>
+                  <p className="text-sm text-muted-foreground mt-1">Uncover communication gaps between sales, F&I, and service</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Unengaged Team - Full Width */}
+            <div className="bg-card border border-border rounded-xl p-4 md:col-span-2 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl">😴</span>
+                <div>
+                  <h4 className="font-semibold text-foreground">Unengaged Team Culture</h4>
+                  <p className="text-sm text-muted-foreground mt-1">Reveal when your team has become order-takers instead of a true sales department—and fix it</p>
+                </div>
+              </div>
             </div>
           </div>
           
