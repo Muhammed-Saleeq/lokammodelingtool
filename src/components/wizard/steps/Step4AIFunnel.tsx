@@ -32,18 +32,22 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
           <div className="space-y-3">
             <Label className="flex items-center flex-wrap">
               % of unsold customers reached by AI
-              <InfoTooltip content="AI calls at optimal times, leaves voicemails, sends texts. No lunch breaks." />
+              <InfoTooltip content="AI calls at optimal times, leaves voicemails, sends texts. No lunch breaks. Current service data shows ~70% reach rate." />
             </Label>
             <div className="flex items-center gap-4">
               <Slider
                 value={[data.aiReachPercent]}
                 onValueChange={([value]) => onChange({ aiReachPercent: value })}
-                min={30}
-                max={80}
+                min={0}
+                max={100}
                 step={5}
                 className="flex-1"
               />
               <span className="text-2xl font-bold text-primary w-16 text-right">{data.aiReachPercent}%</span>
+            </div>
+            <div className="flex justify-between text-xs text-muted-foreground">
+              <span>0%</span>
+              <span>100%</span>
             </div>
           </div>
 
@@ -56,12 +60,16 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
               <Slider
                 value={[data.appointmentPercent]}
                 onValueChange={([value]) => onChange({ appointmentPercent: value })}
-                min={10}
-                max={50}
+                min={0}
+                max={100}
                 step={5}
                 className="flex-1"
               />
               <span className="text-2xl font-bold text-primary w-16 text-right">{data.appointmentPercent}%</span>
+            </div>
+            <div className="flex justify-between text-xs text-muted-foreground">
+              <span>0%</span>
+              <span>100%</span>
             </div>
           </div>
 
@@ -74,12 +82,16 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
               <Slider
                 value={[data.showRate]}
                 onValueChange={([value]) => onChange({ showRate: value })}
-                min={50}
-                max={90}
+                min={0}
+                max={100}
                 step={5}
                 className="flex-1"
               />
               <span className="text-2xl font-bold text-primary w-16 text-right">{data.showRate}%</span>
+            </div>
+            <div className="flex justify-between text-xs text-muted-foreground">
+              <span>0%</span>
+              <span>100%</span>
             </div>
           </div>
 
@@ -92,12 +104,16 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
               <Slider
                 value={[data.returnCloseRate]}
                 onValueChange={([value]) => onChange({ returnCloseRate: value })}
-                min={15}
-                max={50}
+                min={0}
+                max={100}
                 step={5}
                 className="flex-1"
               />
               <span className="text-2xl font-bold text-primary w-16 text-right">{data.returnCloseRate}%</span>
+            </div>
+            <div className="flex justify-between text-xs text-muted-foreground">
+              <span>0%</span>
+              <span>100%</span>
             </div>
             {data.returnCloseRate >= data.closeRate && (
               <p className="text-sm text-primary font-medium">

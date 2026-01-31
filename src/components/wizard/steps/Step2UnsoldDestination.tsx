@@ -35,16 +35,16 @@ export function Step2UnsoldDestination({ data, onChange }: Step2Props) {
               <Slider
                 value={[data.buyElsewherePercent]}
                 onValueChange={([value]) => onChange({ buyElsewherePercent: value })}
-                min={30}
-                max={70}
+                min={0}
+                max={100}
                 step={5}
                 className="flex-1"
               />
               <span className="text-2xl font-bold text-primary w-16 text-right">{data.buyElsewherePercent}%</span>
             </div>
             <div className="flex justify-between text-xs text-muted-foreground">
-              <span>30%</span>
-              <span>70%</span>
+              <span>0%</span>
+              <span>100%</span>
             </div>
           </div>
         </CardContent>
