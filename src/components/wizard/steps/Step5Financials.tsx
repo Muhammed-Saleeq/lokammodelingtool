@@ -136,16 +136,19 @@ export function Step5Financials({ data, onChange }: Step5Props) {
               </div>
             </div>
 
-            <div className="bg-primary/10 rounded-lg p-4 text-center border-2 border-primary">
-              <h4 className="font-semibold text-primary mb-4">With AI Agent</h4>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-xs text-muted-foreground">Recovered Sales/mo</p>
-                  <p className="text-2xl font-bold text-primary">{metrics.additionalSales}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Monthly Opportunity</p>
-                  <p className="text-2xl font-bold text-primary">${metrics.additionalGrossProfit.toLocaleString()}</p>
+            <div className="bg-gradient-to-br from-primary/20 via-primary/10 to-primary/20 rounded-lg p-4 text-center border-2 border-primary shadow-lg shadow-primary/25 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+              <div className="relative">
+                <h4 className="font-semibold text-primary mb-4 text-lg">✨ With AI Agent</h4>
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-xs text-muted-foreground">Recovered Sales/mo</p>
+                    <p className="text-3xl font-bold text-primary">{metrics.additionalSales}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Monthly Opportunity</p>
+                    <p className="text-3xl font-bold text-primary">${metrics.additionalGrossProfit.toLocaleString()}</p>
+                  </div>
                 </div>
               </div>
             </div>
