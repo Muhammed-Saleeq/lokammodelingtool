@@ -36,10 +36,10 @@ export function Step5Financials({ data, onChange }: Step5Props) {
               <Input
                 id="grossProfit"
                 type="number"
-                value={data.grossProfit}
+                value={data.grossProfit || ''}
                 onChange={(e) => onChange({ grossProfit: parseInt(e.target.value) || 0 })}
-                onFocus={(e) => e.target.select()}
                 className="pl-8 text-lg"
+                placeholder="3500"
               />
             </div>
           </div>
