@@ -54,7 +54,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
           <div className="space-y-3">
             <Label className="flex items-center flex-wrap">
               % of reached who book an appointment
-              <InfoTooltip content="The AI identifies their objection and addresses it. No ego, no assumptions." />
+              <InfoTooltip content="These are be-backs—customers who already visited. Apply your normal schedule rate here, which should be at least 60% of contacted customers." />
             </Label>
             <div className="flex items-center gap-4">
               <Slider
