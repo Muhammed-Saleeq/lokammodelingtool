@@ -142,6 +142,7 @@ export function Step6Results({ data, onChange, onRestart, onExportPDF }: Step6Pr
                 value={data.dealerName}
                 onChange={(e) => onChange({ dealerName: e.target.value })}
                 placeholder="ABC Motors"
+                className="capitalize"
               />
             </div>
             <div className="space-y-2">
@@ -154,6 +155,7 @@ export function Step6Results({ data, onChange, onRestart, onExportPDF }: Step6Pr
                 value={data.contactName}
                 onChange={(e) => onChange({ contactName: e.target.value })}
                 placeholder="John Smith"
+                className="capitalize"
               />
             </div>
             <div className="space-y-2">

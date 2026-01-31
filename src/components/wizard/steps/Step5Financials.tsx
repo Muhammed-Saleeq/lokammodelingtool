@@ -38,6 +38,7 @@ export function Step5Financials({ data, onChange }: Step5Props) {
                 type="number"
                 value={data.grossProfit}
                 onChange={(e) => onChange({ grossProfit: parseInt(e.target.value) || 0 })}
+                onFocus={(e) => e.target.select()}
                 className="pl-8 text-lg"
               />
             </div>
@@ -55,6 +56,7 @@ export function Step5Financials({ data, onChange }: Step5Props) {
                 type="number"
                 value={data.toolCost}
                 onChange={(e) => onChange({ toolCost: parseInt(e.target.value) || 0 })}
+                onFocus={(e) => e.target.select()}
                 className="pl-8 text-lg"
               />
             </div>
