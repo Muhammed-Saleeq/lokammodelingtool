@@ -192,6 +192,40 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
         </CardContent>
       </Card>
 
+      {/* Non-Financial Benefits */}
+      <Card className="border-primary/30 bg-primary/5">
+        <CardHeader>
+          <CardTitle className="text-lg text-center">Beyond the Numbers: What You'll Discover</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground text-center mb-6">
+            These issues are costing you money every month—but no one is telling your team because there's no evidence. <span className="text-foreground font-semibold">That ends now.</span>
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="bg-card/50 border border-border rounded-lg p-3">
+              <p className="text-sm text-foreground">💰 Undervaluing trade-ins</p>
+            </div>
+            <div className="bg-card/50 border border-border rounded-lg p-3">
+              <p className="text-sm text-foreground">📊 Unreasonable finance rates</p>
+            </div>
+            <div className="bg-card/50 border border-border rounded-lg p-3">
+              <p className="text-sm text-foreground">😤 Hard-sell managers pushing customers away</p>
+            </div>
+            <div className="bg-card/50 border border-border rounded-lg p-3">
+              <p className="text-sm text-foreground">❓ Salespeople who don't know the product</p>
+            </div>
+            <div className="bg-card/50 border border-border rounded-lg p-3 md:col-span-2">
+              <p className="text-sm text-foreground">😴 A team that's unengaged—order takers, not a sales department</p>
+            </div>
+          </div>
+          
+          <p className="text-center text-primary font-semibold mt-6">
+            Your team will discover the real reasons deals are walking out—and take corrective action to improve and succeed.
+          </p>
+        </CardContent>
+      </Card>
+
       <Card className="bg-accent/50 border-accent">
         <CardContent className="pt-6">
           <p className="text-center text-foreground">
