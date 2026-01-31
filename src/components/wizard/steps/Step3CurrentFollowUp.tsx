@@ -33,7 +33,7 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
           <div className="space-y-3">
             <Label className="flex items-center flex-wrap text-foreground">
               What % of your unsold customers get a follow-up call within 48 hours?
-              <InfoTooltip content="Be brutally honest. Most stores are under 30%. Would you accept this from any other part of your business?" />
+              <InfoTooltip content="Be brutally honest. Most stores are under 10%. Would you accept this from any other part of your business?" />
             </Label>
             <div className="flex items-center gap-4">
               <Slider
