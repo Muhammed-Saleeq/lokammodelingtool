@@ -237,6 +237,7 @@ export function ROIWizard() {
             onChange={handleDataChange} 
             onRestart={handleRestart}
             onExportPDF={handleExportPDF}
+            onBack={handleBack}
           />
         );
       default:
