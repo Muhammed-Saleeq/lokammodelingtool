@@ -76,7 +76,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
           <div className="space-y-3">
             <Label className="flex items-center flex-wrap">
               Appointment show rate
-              <InfoTooltip content="They agreed to come back. They're motivated." />
+              <InfoTooltip content="Use your current show rate here—but it should be no less than 50-55%. They agreed to come back, so they're motivated." />
             </Label>
             <div className="flex items-center gap-4">
               <Slider
