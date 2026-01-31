@@ -124,11 +124,11 @@ export function Step5Financials({ data, onChange }: Step5Props) {
               <h4 className="font-semibold text-muted-foreground mb-4">Do Nothing</h4>
               <div className="space-y-3">
                 <div>
-                  <p className="text-xs text-muted-foreground">Recovered Sales</p>
+                  <p className="text-xs text-muted-foreground">Recovered Sales/mo</p>
                   <p className="text-2xl font-bold text-muted-foreground">0</p>
                 </div>
                 <div>
-                  <p className="text-xs text-muted-foreground">Additional Profit</p>
+                  <p className="text-xs text-muted-foreground">Additional Profit/mo</p>
                   <p className="text-2xl font-bold text-muted-foreground">$0</p>
                 </div>
               </div>
@@ -138,11 +138,11 @@ export function Step5Financials({ data, onChange }: Step5Props) {
               <h4 className="font-semibold text-primary mb-4">With AI Agent</h4>
               <div className="space-y-3">
                 <div>
-                  <p className="text-xs text-muted-foreground">Recovered Sales</p>
+                  <p className="text-xs text-muted-foreground">Recovered Sales/mo</p>
                   <p className="text-2xl font-bold text-primary">{metrics.additionalSales}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-muted-foreground">Net Profit</p>
+                  <p className="text-xs text-muted-foreground">Net Profit/mo</p>
                   <p className="text-2xl font-bold text-primary">${metrics.netMonthlyProfit.toLocaleString()}</p>
                 </div>
               </div>
