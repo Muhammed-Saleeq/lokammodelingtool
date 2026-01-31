@@ -136,7 +136,7 @@ export function Step5Financials({ data, onChange }: Step5Props) {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-primary/20 via-primary/10 to-primary/20 rounded-lg p-4 text-center border-2 border-primary shadow-lg shadow-primary/25 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-primary/20 via-primary/10 to-primary/20 rounded-lg p-4 text-center border-2 border-primary shadow-lg shadow-primary/25 relative overflow-hidden transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-xl hover:shadow-primary/40 hover:border-primary hover:from-primary/30 hover:via-primary/20 hover:to-primary/30">
               <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
               <div className="relative">
                 <h4 className="font-semibold text-primary mb-4 text-lg">✨ With AI Agent</h4>
