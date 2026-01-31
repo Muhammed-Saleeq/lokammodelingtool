@@ -15,7 +15,8 @@ import {
   Trophy,
   TrendingUp,
   DollarSign,
-  ArrowRight
+  ArrowRight,
+  ChevronLeft
 } from "lucide-react";
 
 interface Step6Props {
@@ -23,9 +24,10 @@ interface Step6Props {
   onChange: (updates: Partial<WizardData>) => void;
   onRestart: () => void;
   onExportPDF: () => void;
+  onBack: () => void;
 }
 
-export function Step6Results({ data, onChange, onRestart, onExportPDF }: Step6Props) {
+export function Step6Results({ data, onChange, onRestart, onExportPDF, onBack }: Step6Props) {
   const metrics = calculateMetrics(data);
 
   return (
@@ -200,14 +202,23 @@ export function Step6Results({ data, onChange, onRestart, onExportPDF }: Step6Pr
       </Card>
 
       {/* Actions */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <Button 
+          onClick={onBack} 
+          variant="outline"
+          className="h-auto py-4 flex flex-col items-center gap-2"
+        >
+          <ChevronLeft className="h-6 w-6" />
+          <span>Back</span>
+        </Button>
+
         <Button 
           onClick={onExportPDF} 
           className="h-auto py-4 flex flex-col items-center gap-2"
           variant="default"
         >
           <Download className="h-6 w-6" />
-          <span>Download PDF Report</span>
+          <span>Download PDF</span>
         </Button>
 
         <Button 
@@ -216,7 +227,7 @@ export function Step6Results({ data, onChange, onRestart, onExportPDF }: Step6Pr
           className="h-auto py-4 flex flex-col items-center gap-2"
         >
           <RefreshCw className="h-6 w-6" />
-          <span>Adjust My Numbers</span>
+          <span>Start Over</span>
         </Button>
 
         <Button 
