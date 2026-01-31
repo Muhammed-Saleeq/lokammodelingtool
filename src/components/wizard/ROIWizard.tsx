@@ -50,6 +50,10 @@ export function ROIWizard() {
     setCurrentStep(1);
     setData(defaultWizardData);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    toast({
+      title: "Calculator Reset",
+      description: "All values have been reset to defaults.",
+    });
   };
 
   const handleExportPDF = () => {
