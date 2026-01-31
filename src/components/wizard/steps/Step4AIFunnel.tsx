@@ -46,7 +46,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
                   <Label className="text-sm flex items-center gap-1">
                     <Phone className="h-3 w-3" />
                     AI Reach Rate
-                    <InfoTooltip content="Our service dialer achieves a 70-75% reach rate by calling at optimal times, leaving voicemails, and sending texts." />
+                    <InfoTooltip content="Our service dialer achieves a 70-75% reach rate by calling at optimal times and leaving voicemails." />
                   </Label>
                   <Slider
                     value={[data.aiReachPercent]}
