@@ -203,19 +203,19 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div className="bg-card/50 border border-border rounded-lg p-3">
+            <div className="bg-card/50 border border-border rounded-lg p-3 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
               <p className="text-sm text-foreground">💰 Undervaluing trade-ins</p>
             </div>
-            <div className="bg-card/50 border border-border rounded-lg p-3">
+            <div className="bg-card/50 border border-border rounded-lg p-3 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
               <p className="text-sm text-foreground">📊 Unreasonable finance rates</p>
             </div>
-            <div className="bg-card/50 border border-border rounded-lg p-3">
+            <div className="bg-card/50 border border-border rounded-lg p-3 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
               <p className="text-sm text-foreground">😤 Hard-sell managers pushing customers away</p>
             </div>
-            <div className="bg-card/50 border border-border rounded-lg p-3">
+            <div className="bg-card/50 border border-border rounded-lg p-3 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
               <p className="text-sm text-foreground">❓ Salespeople who don't know the product</p>
             </div>
-            <div className="bg-card/50 border border-border rounded-lg p-3 md:col-span-2">
+            <div className="bg-card/50 border border-border rounded-lg p-3 md:col-span-2 transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:bg-primary/10 hover:border-primary/50 hover:shadow-lg">
               <p className="text-sm text-foreground">😴 A team that's unengaged—order takers, not a sales department</p>
             </div>
           </div>
