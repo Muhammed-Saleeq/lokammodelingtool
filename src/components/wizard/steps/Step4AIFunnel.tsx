@@ -32,7 +32,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
           <div className="space-y-3">
             <Label className="flex items-center flex-wrap">
               % of unsold customers reached by AI
-              <InfoTooltip content="AI calls at optimal times, leaves voicemails, sends texts. No lunch breaks. Current service data shows ~70% reach rate." />
+              <InfoTooltip content="Our service dialer achieves a 70-75% reach rate by calling at optimal times, leaving voicemails, and sending texts. No lunch breaks, no days off." />
             </Label>
             <div className="flex items-center gap-4">
               <Slider
