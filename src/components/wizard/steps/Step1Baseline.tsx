@@ -50,14 +50,14 @@ export function Step1Baseline({ data, onChange }: Step1Props) {
             <Slider
               value={[data.closeRate]}
               onValueChange={([value]) => onChange({ closeRate: value, returnCloseRate: value })}
-              min={15}
-              max={40}
+              min={0}
+              max={100}
               step={1}
               className="w-full"
             />
             <div className="flex justify-between text-xs text-muted-foreground">
-              <span>15%</span>
-              <span>40%</span>
+              <span>0%</span>
+              <span>100%</span>
             </div>
             {data.closeRate > 25 && (
               <p className="text-sm text-primary font-medium">That's a strong close rate! You're ahead of most dealers.</p>
