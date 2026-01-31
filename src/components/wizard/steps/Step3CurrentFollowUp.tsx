@@ -88,7 +88,7 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
       </div>
 
       {/* Cost of Excuses Section */}
-      <Card className="bg-gradient-to-br from-destructive/20 to-destructive/5 border-destructive/40">
+      <Card className="bg-card border-destructive">
         <CardHeader>
           <CardTitle className="text-xl text-center text-destructive flex items-center justify-center gap-2">
             <DollarSign className="h-6 w-6" />
@@ -99,6 +99,18 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
           <p className="text-center text-5xl font-bold text-destructive mb-2">
             ${missedOpportunityGross.toLocaleString()}<span className="text-lg font-normal">/mo</span>
           </p>
+          
+          {/* Formula breakdown */}
+          <div className="bg-secondary/50 rounded-lg p-3 mb-4 text-center">
+            <p className="text-sm text-muted-foreground mb-1">The math:</p>
+            <p className="text-foreground font-mono text-sm">
+              {missedCalls.toLocaleString()} uncalled × {data.buyElsewherePercent}% buy elsewhere × ${data.grossProfit.toLocaleString()} gross
+            </p>
+            <p className="text-xs text-muted-foreground mt-1">
+              = {buyersNotCalled.toLocaleString()} lost buyers × ${data.grossProfit.toLocaleString()} = <span className="text-destructive font-bold">${missedOpportunityGross.toLocaleString()}</span>
+            </p>
+          </div>
+          
           <p className="text-center text-muted-foreground mb-6">
             {buyersNotCalled.toLocaleString()} customers you're not calling will buy from a competitor
           </p>
