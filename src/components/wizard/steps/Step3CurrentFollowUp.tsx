@@ -108,7 +108,7 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
                 <div>
                   <p className="font-semibold text-foreground">"We're understaffed"</p>
                   <p className="text-sm text-muted-foreground">
-                    Then hire help—or accept that understaffing is costing you <span className="text-destructive font-semibold">${Math.round(costOfInaction * 0.4).toLocaleString()}/month</span> in lost deals.
+                    Then hire help—or accept that understaffing is a choice that costs you deals every single month.
                   </p>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
                 <div>
                   <p className="font-semibold text-foreground">"They're just shoppers" / "They're mooches"</p>
                   <p className="text-sm text-muted-foreground">
-                    The same person who didn't close the deal is now deciding who's worth calling? That's caller bias costing you <span className="text-destructive font-semibold">${Math.round(costOfInaction * 0.35).toLocaleString()}/month</span>.
+                    The same person who didn't close the deal is now deciding who's worth calling? That's caller bias—and it's costing you.
                   </p>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
                 <div>
                   <p className="font-semibold text-foreground">"New UPs are the priority"</p>
                   <p className="text-sm text-muted-foreground">
-                    So you invest to bring customers in, then abandon them the second they walk out? That's <span className="text-destructive font-semibold">${Math.round(costOfInaction * 0.25).toLocaleString()}/month</span> in wasted marketing.
+                    So you invest to bring customers in, then abandon them the second they walk out? That's wasted marketing.
                   </p>
                 </div>
               </div>
