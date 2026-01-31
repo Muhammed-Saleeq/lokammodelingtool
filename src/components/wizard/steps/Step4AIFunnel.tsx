@@ -98,7 +98,7 @@ export function Step4AIFunnel({ data, onChange }: Step4Props) {
           <div className="space-y-3">
             <Label className="flex items-center flex-wrap">
               Close rate on returners
-              <InfoTooltip content="Think about it: same or higher than your normal rate? They came back for a reason." />
+              <InfoTooltip content="Is it logical to assume this will be lower, the same, or higher? It certainly won't be lower—so apply the same or higher. In most cases it will be well above your normal close rate. These people are coming back to buy, not visit." />
             </Label>
             <div className="flex items-center gap-4">
               <Slider
