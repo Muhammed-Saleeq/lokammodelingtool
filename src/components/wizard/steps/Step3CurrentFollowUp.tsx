@@ -147,7 +147,7 @@ export function Step3CurrentFollowUp({ data, onChange }: Step3Props) {
             Most stores call fewer than <span className="text-destructive font-bold">10%</span> of unsold traffic.
           </p>
           <p className="text-center text-muted-foreground mt-2">
-            <span className="font-bold text-foreground">Zero call everyone</span> to find out why they didn't buy.
+            No dealership we've met calls <span className="font-bold text-foreground">100%</span> of their unsold customers to find out why they left.
           </p>
           <p className="text-center text-primary font-semibold mt-4">
             Would you accept 10% effort from any other department?
