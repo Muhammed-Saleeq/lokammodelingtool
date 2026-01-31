@@ -35,10 +35,10 @@ export function Step1Baseline({ data, onChange }: Step1Props) {
             <Input
               id="monthlyUps"
               type="number"
-              value={data.monthlyUps}
+              value={data.monthlyUps || ''}
               onChange={(e) => onChange({ monthlyUps: parseInt(e.target.value) || 0 })}
-              onFocus={(e) => e.target.select()}
               className="text-lg"
+              placeholder="500"
             />
           </div>
 
@@ -73,10 +73,10 @@ export function Step1Baseline({ data, onChange }: Step1Props) {
               <Input
                 id="grossProfit"
                 type="number"
-                value={data.grossProfit}
+                value={data.grossProfit || ''}
                 onChange={(e) => onChange({ grossProfit: parseInt(e.target.value) || 0 })}
-                onFocus={(e) => e.target.select()}
                 className="pl-8 text-lg"
+                placeholder="3500"
               />
             </div>
           </div>
